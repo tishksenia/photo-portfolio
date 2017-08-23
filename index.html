@@ -24,21 +24,17 @@
 <body>
 <header class="header">
 
-		<!-- The overlay -->
+	<!-- The overlay -->
 	<div id="myNav" class="overlay">
 
-	  <!-- Button to close the overlay navigation -->
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-	  <!-- Overlay content -->
+	<!-- Button to close the overlay navigation -->
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><!-- Overlay content -->
 	  <div class="overlay-content">
 	    <a href="#">Home</a>
 	    <a href="#">Gallery</a>
 	    <a href="#">Contacts</a>
 	  </div>
-
 	</div>
-
 
 	<!-- Маленький логотип в центре -->
 	<img src="img/logo.png" alt="Photo Portfolio" class="header__logo">
@@ -78,6 +74,7 @@
 			</a>
 		</div>
 		<!--  /header__social-icons-bar  -->	
+
 		<!-- Кнопка меню (для мобильных разрешений) -->
 		<div class="header__menu-button" onclick="openNav()">
 			<div class="header__menu-button-part"></div>
@@ -164,7 +161,7 @@
 			<input type="text" name="email" class="form__text-input" placeholder="Email">
 
 			<input type="text" name="message" class="form__text-input form__message" placeholder="Message">
-			<input type="submit" value="Send">
+			<input type="submit" value="Send" class="contact__button">
 			<!--<input type="sumbit" value="Send" class="contact__button" name="register">-->
 		</form>
 
