@@ -6,6 +6,7 @@
           box-sizing: border-box;
   font-family: 'Lato';
   font-weight: 300;
+  /*border: 2px red solid;*/
 }
 
 
@@ -443,6 +444,11 @@ color: #a8a6a4;
 
 	.collections .mobile:first-child {
 		margin-top: 0;
+	}
+
+	/* Form */
+	.contact__form {
+		width: 90%;
 	}
 
 }
