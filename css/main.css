@@ -19,6 +19,15 @@ body {
 	padding: 0;
 }
 
+/*Обычная ссылка */
+.link {
+	font-family: 'Lato';
+	font-weight: 400; /* Lato */
+	color: #8e8e8e;
+	text-decoration: none;
+    transition-duration: 0.4s;
+}
+
 .clearfix {
 	content: '';
 	display: table;
@@ -74,6 +83,7 @@ body {
 }
 
 
+
 /* Главное меню в левом верхнем углу header'а */
 .menu {
 	margin: 0;
@@ -96,7 +106,8 @@ body {
 }
 
 .menu__link a:active,
-.menu__link a:hover {
+.menu__link a:hover,
+.link:hover {
 	color: #2c2a28;
 }
 
@@ -344,12 +355,8 @@ color: #a8a6a4;
 
 
 @media only screen and (max-width: 768px) {
-
-	img {
-	    max-width: 100%;
-	    height: auto;
-	    width: auto\9; /* ie8 */
-
+	.container {
+		width: 100%;
 	}
 	/* Изменения в хедере */
 
@@ -378,17 +385,70 @@ color: #a8a6a4;
 		margin-left: 40px;
 	}
 
-	/* */
+	/* Recent works */
 
-	.container__mobile-img-block {
-		clear: both;
+
+	.works .right-img {
 		float: left;
+		width: 50%;
+	}
+
+	.works__mobile-img-block {
+	    max-width: 100%;
+	    height: auto;
+	    width: auto\9; /* ie8 */
+	}
+
+	/* Collections */
+
+	.collections__img {
+	    max-width: 95%;
+	    height: auto;
+	    width: auto\9; /* ie8 */
+		clear: both;
+	}
+	.collections__text-box p {
+		text-align: center;
 	}
 
 
+	.collections__text-box {
+		position: relative;
+		margin: 0 auto;
+		left: 10%;
+		right: 10%;
+		width: 80%;
+		margin-bottom: 120px;
+	}
+
+	.collections .mobile {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		margin-top: 120px;
+		margin-bottom: 120px;
+	}
+
+
+	.collections__button {
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		margin-top: 65px;
+	}
+	.collections .second-header {
+		margin: 0 auto;
+		text-align: center;
+	} 
+
+	.collections .mobile:first-child {
+		margin-top: 0;
+	}
 
 }
 
+
+/* Меню для мобильной версии */
 .overlay {
     height: 100%;
     width: 0;
@@ -433,7 +493,8 @@ color: #a8a6a4;
 }
 
 /* 
-Для экрана с height <= 450px : больше размер шрифта и изменяется позиция кнопки для закрытия меню
+Для экрана с height <= 450px : 
+больше размер шрифта и изменяется позиция кнопки для закрытия меню 
 + ссылки выстраиваются в ряд
 */
 @media screen and (max-height: 450px) {
