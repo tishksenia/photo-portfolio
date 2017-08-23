@@ -6,9 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="text/javascript">/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}</script>
+
 </head>
 <body>
 <header class="header">
+
+		<!-- The overlay -->
+	<div id="myNav" class="overlay">
+
+	  <!-- Button to close the overlay navigation -->
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+	  <!-- Overlay content -->
+	  <div class="overlay-content">
+	    <a href="#">Home</a>
+	    <a href="#">Gallery</a>
+	    <a href="#">Contacts</a>
+	  </div>
+
+	</div>
+
 
 	<!-- Маленький логотип в центре -->
 	<img src="img/logo.png" alt="Photo Portfolio" class="header__logo">
@@ -48,7 +77,11 @@
 			</a>
 		</div>
 		<!--  /header__social-icons-bar  -->	
-
+		<!-- Кнопка меню (для мобильных разрешений) -->
+		<div class="header__menu-button" onclick="openNav()">
+			<div class="header__menu-button-part"></div>
+			<div class="header__menu-button-part"></div>
+		</div>
 
 	</div>
 	<!--  /header__top-bar  -->	
@@ -72,10 +105,16 @@
 		<h2 class="main-header">Recent works</h2>
 
 		<!-- Последние работы -->
-		<a href="img/img1.png" target="blank"><img src="img/img1.png" alt="" class="works__img left-img"></a>
-		<a href="img/img2.png" target="blank"><img src="img/img3.png" alt="" class="works__img right-img"></a>
-		<a href="img/img3.png" target="blank"><img src="img/img2.png" alt="" class="works__img right-img"></a>
-		<a href="img/img4.png" target="blank"><img src="img/img4.png" alt="" class="works__img"></a>
+		<div class="container__mobile-img-block">
+			<a href="img/img1.png" target="blank"><img src="img/img1.png" alt="" class="works__img left-img"></a>
+		</div>
+		<div class="container__mobile-img-block">
+			<a href="img/img2.png" target="blank"><img src="img/img3.png" alt="" class="works__img right-img"></a>
+			<a href="img/img3.png" target="blank"><img src="img/img2.png" alt="" class="works__img right-img"></a>
+		</div>
+		<div class="container__mobile-img-block">
+			<a href="img/img4.png" target="blank"><img src="img/img4.png" alt="" class="works__img"></a>
+		</div>
 	</div>
 </section>
 
@@ -118,11 +157,14 @@
 	<div class="contact__box">
 		<h2 class="main-header">Get in touch</h2>
 
-		<form action="">
-			<input type="text" class="form__text-input" placeholder="Your Name">
-			<input type="text" class="form__text-input" placeholder="Email">
-			<input type="text" class="form__text-input form__message" placeholder="Message">
-			<button class="contact__button">Send</button>
+		<form method="POST" action="#" onsubmit="submitFunction()" name="myForm">
+			<input type="text" name="username" class="form__text-input" placeholder="Your Name">
+
+			<input type="text" name="email" class="form__text-input" placeholder="Email">
+
+			<input type="text" name="message" class="form__text-input form__message" placeholder="Message">
+			<input type="submit" value="Send">
+			<!--<input type="sumbit" value="Send" class="contact__button" name="register">-->
 		</form>
 
 		<p>Follow me on:</p>
@@ -140,6 +182,8 @@
 				<img src="img/instagram.png" alt="Instagram">
 			</a>
 		</div>
+
+		<p>Design by </p>
 		<!-- /contact__social-icons-bar -->
 		
 

@@ -4,9 +4,19 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  /*border: 2px red solid;*/
   font-family: 'Lato';
   font-weight: 300;
+}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+body {
+	margin:0;
+	padding: 0;
 }
 
 .clearfix {
@@ -14,11 +24,6 @@
 	display: table;
 	width: 100%;
 	clear: both;
-}
-
-body {
-	margin:0;
-	padding: 0;
 }
 
 /* Контейнер для содержимого после шапки */
@@ -35,7 +40,7 @@ body {
 	text-align: center;
 }
 
-/* Используется для названий секций */
+/* Названия секций */
 .main-header {
 	margin: 0;
 	margin-bottom: 36px;
@@ -129,7 +134,6 @@ body {
 
 
 /* Текст в центре шапки */
-
 .header__text {
 	text-align: center;
 	margin-top: 352px;
@@ -195,25 +199,26 @@ body {
 }
 
 /* Изображения */
+
 .works__img {
 	padding: 15px;
+	max-width: 100%;
+	height: auto;
 }
 
 
-.left-img, .float-left {
+.left-img {
 	float: left;	
 }
 
-.right-img, .float-right {
+.right-img {
 	float: right;	
 }
 
 /* Collections section */
-
 .collections {
 	padding: 120px 0;
 	border-bottom: #b5b5b5 solid 1px;
-
 }
 
 .collections__text-box {
@@ -227,7 +232,6 @@ body {
 .collections__button {
 	padding: 14.5px 52px;
 	margin-top: 40px;
-
 
 	font-weight: 700; /* Lato Bold */
 
@@ -275,8 +279,8 @@ body {
     transition-duration: 0.4s;
 }
 
-
 .contact__button {
+	text-align: center;
 	padding: 14.5px 58px;
 	margin-top: 20px;
 	margin-bottom: 39px;
@@ -297,11 +301,7 @@ body {
 	letter-spacing: 1px;
 }
 
-.form {
-}
-
 .form__text-input:first-child{
-
 	margin-top: 15px;
 }
 
@@ -315,21 +315,21 @@ body {
 	position: relative;
 	
 }
-.form__text-input:last-child{
-}
 
 .form__message {
 	height: 180px;
 	padding-top:0;
 	padding-bottom:8em;
 	border-bottom: 1px solid #6c6a68;
-
 }
 
+
+/* Цвет текста в placeholder form__text-input и form__message */
 
 ::-webkit-input-placeholder {
 color: #a8a6a4;
 }
+
 :-moz-placeholder { /* Firefox 18- */
 color: #a8a6a4;  
 }
@@ -340,4 +340,112 @@ color: #a8a6a4;
 
 :-ms-input-placeholder {
 color: #a8a6a4;  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	img {
+	    max-width: 100%;
+	    height: auto;
+	    width: auto\9; /* ie8 */
+
+	}
+	/* Изменения в хедере */
+
+	.menu, .header__social-icons-bar {
+		display: none;
+	}
+
+	.header__menu-button {
+		float: right;
+		display: inline-block;
+	    cursor: pointer;
+		text-align: right;
+	}
+
+	.header__menu-button-part {
+	    width: 30px;
+	    height: 2px;
+	    background-color: black;
+	    margin: 6px 0;
+	    margin-right: 40px;
+	}
+
+	.header__logo {
+		position: relative;
+		float: left;
+		margin-left: 40px;
+	}
+
+	/* */
+
+	.container__mobile-img-block {
+		clear: both;
+		float: left;
+	}
+
+
+
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.8);
+    overflow-x: hidden; /* Отключить горизонтальный скролл */
+    transition: 0.5s; 
+}
+
+/* Как позиционируется контент в оверлее */
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%; 
+    text-align: center; 
+    margin-top: 30px; 
+}
+
+.overlay a {
+	font-weight: 700;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; 
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #fff;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* 
+Для экрана с height <= 450px : больше размер шрифта и изменяется позиция кнопки для закрытия меню
++ ссылки выстраиваются в ряд
+*/
+@media screen and (max-height: 450px) {
+
+    .overlay a {
+    	font-size: 20px;
+    	display: inline-block;
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+
 }
